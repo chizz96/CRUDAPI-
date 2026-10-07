@@ -3,9 +3,10 @@ const router = express.Router();
 
 const { allusers, newUser, getOneUser,  updateUser, deleteUser } = require("../controller/user")
 
+const logger = require("../middleware/logger.js")
 
 
-router.get("/alluser", allusers);
+router.get("/alluser", logger, allusers);
 
 router.post("/newuser", newUser);
 
