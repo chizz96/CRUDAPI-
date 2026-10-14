@@ -25,17 +25,16 @@ const allusers = (req, res)=> {
 
 }
 
-// to create a new user
+
 const newUser = async(req, res)=> {
-    const name = req.body.name
-    const gender = req.body.gender;
-    const id = database.length + 1
+    const {name, gender} = req.body;
+    const id = database.length + 1;
 
 
     const user = {
         id: id,
-        name: name,
-        gender: gender
+        name,
+        gender
     }
 
     database.push(user)
